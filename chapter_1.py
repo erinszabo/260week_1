@@ -49,6 +49,8 @@ def monkey(qlen):
 print(monkey(qlen))
 
 print("self_check_3 Challenge:")
+
+
 def luck(quote, guess):
     num_same = 0
     for i in range(qlen):
@@ -70,13 +72,23 @@ def lucky_monkey():
         new_guess = monkey(qlen)
         mluck = luck(quote, new_guess)
     print(new_guess)
-
 # lucky_monkey()
+
+
 print("not working but I realized I didn't need to do this one anyway...")
+
 
 print()
 print("self_check_#:")
-#fraction class stuff
+
+
+class Fraction:
+
+    def __init__(self, top, bottom):
+
+        self.num = top
+        self.den = bottom
+
 
 
 print()
