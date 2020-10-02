@@ -79,16 +79,35 @@ print("not working but I realized I didn't need to do this one anyway...")
 
 
 print()
-print("self_check_#:")
+print("self_check_Fraction:")
 
 
 class Fraction:
+    #__den: int
 
-    def __init__(self, top, bottom):
+    """ Creates a fraction object """
+    def __init__(self, top: int = 0, bottom: int = 1):
+        self.__num: int = top
+        self.__den: int = bottom
 
-        self.num = top
-        self.den = bottom
+    """ replacing default String  """
+    def __str__(self):
+        return f"{self.__num}/{self.__den}"
 
+    """ This is essentially a getter """
+    @property
+    def num(self):
+        return self.__num
+
+    @property
+    def den(self):
+        return self.__den
+
+    def __add__(self, otherfraction):
+        newnum = self.num * otherfraction.den + self.den * otherfraction.num
+        newden = self.den * otherfraction.den
+
+        return Fraction(newnum, newden)
 
 
 print()
