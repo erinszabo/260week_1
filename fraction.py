@@ -5,6 +5,10 @@ To Do:
 -fix gcd function
 -more...
 """
+
+# import test
+# print("imported")
+
 class Fraction:
     # __den: int
 
@@ -45,7 +49,7 @@ class Fraction:
         :type m: int
         """
         while m % n != 0:  # while m doesn't divide evenly into n // check if m % n (modulo of the 2 given) != 0
-            oldm = m       # swap m and n
+            oldm = m  # swap m and n
             oldn = n
             m = oldn
             n = oldm % oldn  # set n equal to the modulo of oldm and oldn
@@ -56,6 +60,9 @@ class Fraction:
         secondnum = other.num * self.den
         return firstnum == secondnum
 
+
+
+
 ''' 
 TO FIX:
 - figure out gcd function 
@@ -64,6 +71,8 @@ TO FIX:
 UNIT TESTING FOR FRACTION CLASS BELOW
 '''
 
+
+"""
 myfraction = Fraction(3, 5)
 print(myfraction)
 otherfraction = Fraction(2, 9)
@@ -74,11 +83,9 @@ oden = otherfraction.den
 mden = myfraction.den
 print(f"oden = {oden} , mden = {mden}")
 
-
-
-
 # x = gcd(20, 10)
 # print(x)
 
 print()
 print()
+"""
