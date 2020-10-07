@@ -1,12 +1,3 @@
-"""
-To Do:
--fix all doc strings
--create unit tests for each function
--fix gcd function
--more...
-"""
-
-
 # import test
 # print("imported")
 
@@ -27,18 +18,17 @@ def gcd(m, n):
 class Fraction:
     # __den: int
 
-    """ Creates a fraction object """
-
     def __init__(self, top: int = 0, bottom: int = 1):
+        """
+        creates a Fraction object
+        :type top: int
+        :type bottom: int
+        """
         self.__num: int = top
         self.__den: int = bottom
 
-    """ replacing default String  """
-
     def __str__(self):
         return f"{self.__num}/{self.__den}"
-
-    """ This is essentially a getter """
 
     @property
     def num(self):
@@ -58,6 +48,10 @@ class Fraction:
         return Fraction(newnum, newden)
 
     def simplified_add(self, otherfraction):
+        """"
+        adds the fractions, simplified
+        :type otherfraction: Fraction
+        """
         newnum = self.num * otherfraction.den + \
                  self.den * otherfraction.num
         newden = self.den * otherfraction.den
@@ -65,33 +59,10 @@ class Fraction:
         return Fraction(newnum // common, newden // common)
 
     def __eq__(self, other):
+        """"
+        tests if two fraction objects are equal
+        :type other: Fraction
+        """
         firstnum = self.num * other.den
         secondnum = other.num * self.den
         return firstnum == secondnum
-
-
-''' 
-TO FIX:
-- figure out gcd function 
-- create unit tests for each function 
-
-UNIT TESTING FOR FRACTION CLASS BELOW
-'''
-
-"""
-myfraction = Fraction(3, 5)
-print(myfraction)
-otherfraction = Fraction(2, 9)
-print(otherfraction)
-frac_sum = myfraction.__add__(otherfraction)
-print(f" __add__ result : {frac_sum} ")
-oden = otherfraction.den
-mden = myfraction.den
-print(f"oden = {oden} , mden = {mden}")
-
-# x = gcd(20, 10)
-# print(x)
-
-print()
-print()
-"""
