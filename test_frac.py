@@ -1,14 +1,22 @@
 import unittest
-import fraction as f
+import fraction as fr
+
 """
+ Iff I don't have the name == main part:
  Remember to run the tests type this into the terminal window:
  python -m unittest test_frac.py
 """
 
+
 class TestFraction(unittest.TestCase):
 
     def test_add(self):
-        a = f.Fraction(3, 5)
-        b = f.Fraction(1, 5)
-        c = f.a.__add__(b)
-        self.assertEqual(c, 4/5)
+        a = fr.Fraction(3, 5)
+        b = fr.Fraction(1, 5)
+        c = a.__add__(b)
+        print(c)
+        self.assertEqual(c, fr.Fraction(20, 25))
+
+
+if __name__ == '__main__':
+    unittest.main()

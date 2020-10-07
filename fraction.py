@@ -6,8 +6,23 @@ To Do:
 -more...
 """
 
+
 # import test
 # print("imported")
+
+def gcd(m, n):
+    """
+    finds the greatest common denominator.
+    :type n: int
+    :type m: int
+    """
+    while m % n != 0:  # while m doesn't divide evenly into n // check if m % n (modulo of the 2 given) != 0
+        oldm = m  # swap m and n
+        oldn = n
+        m = oldn
+        n = oldm % oldn  # set n equal to the modulo of oldm and oldn
+    return n
+
 
 class Fraction:
     # __den: int
@@ -42,25 +57,10 @@ class Fraction:
         newden = self.den * otherfraction.den
         return Fraction(newnum, newden)
 
-    def gcd(m, n):
-        """
-        finds the greatest common denominator.
-        :type n: int
-        :type m: int
-        """
-        while m % n != 0:  # while m doesn't divide evenly into n // check if m % n (modulo of the 2 given) != 0
-            oldm = m  # swap m and n
-            oldn = n
-            m = oldn
-            n = oldm % oldn  # set n equal to the modulo of oldm and oldn
-        return n
-
     def __eq__(self, other):
         firstnum = self.num * other.den
         secondnum = other.num * self.den
         return firstnum == secondnum
-
-
 
 
 ''' 
@@ -70,7 +70,6 @@ TO FIX:
 
 UNIT TESTING FOR FRACTION CLASS BELOW
 '''
-
 
 """
 myfraction = Fraction(3, 5)
