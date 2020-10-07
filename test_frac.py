@@ -17,6 +17,14 @@ class TestFraction(unittest.TestCase):
         print(c)
         self.assertEqual(c, fr.Fraction(20, 25))
 
+    def test_simplified_add(self):
+        a = fr.Fraction(3, 5)
+        b = fr.Fraction(1, 5)
+        c = a.simplified_add(b)
+        print(c)
+        self.assertEqual(c, fr.Fraction(4, 5))
+
+
 
 if __name__ == '__main__':
     unittest.main()
